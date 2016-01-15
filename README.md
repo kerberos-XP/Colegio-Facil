@@ -1,0 +1,2 @@
+# SGC
+Sistema Gestión Colegios

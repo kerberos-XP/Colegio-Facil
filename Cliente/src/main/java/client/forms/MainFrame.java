@@ -40,8 +40,6 @@ public class MainFrame extends JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     public static void main(String args[]) {
-        //Configurando el logger
-        BasicConfigurator.configure();
         
         if (!Utils.comprobarInstancia()) {
             JOptionPane.showMessageDialog(null, "La aplicación ya está ejecutándose en otra ventana", 

@@ -58,7 +58,7 @@
                             </descriptorRefs>
                             <archive>
                                 <manifest>
-                                    <mainClass>client.forms.MainFrame</mainClass>
+                                    <mainClass>client.main.Main</mainClass>
                                 </manifest>
                             </archive>
                         </configuration>

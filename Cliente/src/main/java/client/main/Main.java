@@ -1,5 +1,6 @@
 package client.main;
 
+import client.forms.PanelPreferencias;
 import client.forms.VentanaPrincipal;
 import client.utilities.Utils;
 import com.pagosoft.plaf.PlafOptions;
@@ -16,12 +17,22 @@ public class Main {
 
     private static final Logger log = Logger.getLogger(VentanaPrincipal.class);
 
+    private static VentanaPrincipal ventanaPrincipal;
+
+    public static VentanaPrincipal getVentanaPrincipal() {
+        return ventanaPrincipal;
+    }
+
     public static void main(String args[]) {
+
+        // Establecer apariencia de la aplicación
+        PlafOptions.setAsLookAndFeel();
+        PlafOptions.updateAllUIs();
 
         if (!Utils.comprobarInstancia()) {
             JOptionPane.showMessageDialog(null, "La aplicación ya está ejecutándose en otra ventana",
                     "Error", JOptionPane.ERROR_MESSAGE);
-            Utils.cerrarPrograma();
+            Utils.cerrarAplicacion();
         }
 
         log.info("Iniciando Aplicacion");
@@ -36,18 +47,15 @@ public class Main {
         // Obtiene los valores del archivo de propiedades
         Utils.leerArchivoPropiedades();
 
-        // Establecer apariencia
-        PlafOptions.setAsLookAndFeel();
-        PlafOptions.updateAllUIs();
-        
         // Levantar ventana principal
-        VentanaPrincipal ventanaPrincipal = new VentanaPrincipal();
-//        ventanaPrincipal.setIconImage(img.getImage());
+        ventanaPrincipal = new VentanaPrincipal();
+        ventanaPrincipal.setTitle("SGC");
+        ventanaPrincipal.setIconImage(Utils.getIcono());
         ventanaPrincipal.setMinimumSize(new Dimension(800, 600));
         ventanaPrincipal.setResizable(true);
         ventanaPrincipal.setLocationRelativeTo(null);
         ventanaPrincipal.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         ventanaPrincipal.setVisible(true);
     }
-    
+
 }

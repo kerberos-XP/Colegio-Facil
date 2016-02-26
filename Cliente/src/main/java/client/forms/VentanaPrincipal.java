@@ -1,5 +1,7 @@
 package client.forms;
 
+import client.utilities.Utils;
+import java.awt.BorderLayout;
 import javax.swing.JFrame;
 import org.apache.log4j.Logger;
 
@@ -15,63 +17,121 @@ public class VentanaPrincipal extends JFrame {
         initComponents();
     }
 
+    private void preferencias() {
+        this.getContentPane().removeAll();
+        this.add(new PanelPreferencias());
+        refrescarPanel();
+    }
+
+    private void acercaDe() {
+
+    }
+
+    private void refrescarPanel() {
+        this.paintAll(this.getGraphics());
+    }
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        panelPrincipal = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
         barraMenu = new javax.swing.JMenuBar();
-        menu1 = new javax.swing.JMenu();
-        itemA = new javax.swing.JMenuItem();
-        itemB = new javax.swing.JMenuItem();
-        menu2 = new javax.swing.JMenu();
-        itemC = new javax.swing.JMenuItem();
-        itemD = new javax.swing.JMenuItem();
+        menuArchivo = new javax.swing.JMenu();
+        itemPreferencias = new javax.swing.JMenuItem();
+        jSeparator1 = new javax.swing.JPopupMenu.Separator();
+        itemSalir = new javax.swing.JMenuItem();
+        menuAyuda = new javax.swing.JMenu();
+        itemAcercaDe = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new java.awt.CardLayout());
 
-        menu1.setText("Menu1");
+        panelPrincipal.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
 
-        itemA.setText("itemA");
-        menu1.add(itemA);
+        jLabel1.setText("WELCOME TO THE JUNGLE");
 
-        itemB.setText("itemB");
-        menu1.add(itemB);
+        javax.swing.GroupLayout panelPrincipalLayout = new javax.swing.GroupLayout(panelPrincipal);
+        panelPrincipal.setLayout(panelPrincipalLayout);
+        panelPrincipalLayout.setHorizontalGroup(
+            panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelPrincipalLayout.createSequentialGroup()
+                .addContainerGap(293, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(244, 244, 244))
+        );
+        panelPrincipalLayout.setVerticalGroup(
+            panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelPrincipalLayout.createSequentialGroup()
+                .addGap(162, 162, 162)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(181, Short.MAX_VALUE))
+        );
 
-        barraMenu.add(menu1);
+        getContentPane().add(panelPrincipal, "card2");
 
-        menu2.setText("Menu2");
+        barraMenu.setBorder(null);
 
-        itemC.setText("itemC");
-        menu2.add(itemC);
+        menuArchivo.setText("Archivo");
 
-        itemD.setText("itemD");
-        menu2.add(itemD);
+        itemPreferencias.setText("Preferencias");
+        itemPreferencias.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemPreferenciasActionPerformed(evt);
+            }
+        });
+        menuArchivo.add(itemPreferencias);
+        menuArchivo.add(jSeparator1);
 
-        barraMenu.add(menu2);
+        itemSalir.setText("Salir");
+        itemSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemSalirActionPerformed(evt);
+            }
+        });
+        menuArchivo.add(itemSalir);
+
+        barraMenu.add(menuArchivo);
+
+        menuAyuda.setText("Ayuda");
+
+        itemAcercaDe.setText("Acerca de");
+        itemAcercaDe.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemAcercaDeActionPerformed(evt);
+            }
+        });
+        menuAyuda.add(itemAcercaDe);
+
+        barraMenu.add(menuAyuda);
 
         setJMenuBar(barraMenu);
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 899, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 399, Short.MAX_VALUE)
-        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void itemSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemSalirActionPerformed
+        Utils.cerrarAplicacion();
+    }//GEN-LAST:event_itemSalirActionPerformed
+
+    private void itemPreferenciasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemPreferenciasActionPerformed
+        preferencias();
+    }//GEN-LAST:event_itemPreferenciasActionPerformed
+
+    private void itemAcercaDeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemAcercaDeActionPerformed
+        acercaDe();
+    }//GEN-LAST:event_itemAcercaDeActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuBar barraMenu;
-    private javax.swing.JMenuItem itemA;
-    private javax.swing.JMenuItem itemB;
-    private javax.swing.JMenuItem itemC;
-    private javax.swing.JMenuItem itemD;
-    private javax.swing.JMenu menu1;
-    private javax.swing.JMenu menu2;
+    private javax.swing.JMenuItem itemAcercaDe;
+    private javax.swing.JMenuItem itemPreferencias;
+    private javax.swing.JMenuItem itemSalir;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPopupMenu.Separator jSeparator1;
+    private javax.swing.JMenu menuArchivo;
+    private javax.swing.JMenu menuAyuda;
+    private javax.swing.JPanel panelPrincipal;
     // End of variables declaration//GEN-END:variables
 }

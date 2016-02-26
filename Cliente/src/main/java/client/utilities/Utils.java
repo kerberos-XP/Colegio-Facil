@@ -1,9 +1,13 @@
 package client.utilities;
 
+import client.main.Main;
+import java.awt.Image;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.Socket;
+import java.net.URL;
 import java.util.Properties;
+import javax.swing.ImageIcon;
 import org.apache.log4j.Logger;
 
 /**
@@ -35,7 +39,7 @@ public class Utils {
     /**
      * Cierra la aplicación
      */
-    public static void cerrarPrograma() {
+    public static void cerrarAplicacion() {
         System.exit(0);
     }
 
@@ -54,5 +58,16 @@ public class Utils {
         
         Global.ambiente = propiedades.getProperty("ambiente");
         log.info("Ambiente: " + Global.ambiente);
+    }
+    
+    /**
+     * Imagen de icono para la ventana principal
+     * 
+     * @return 
+     */
+    public static Image getIcono(){
+        URL urlDeLaImagen = Main.class.getClassLoader().getResource("images/icon.png");
+        ImageIcon img = new ImageIcon(urlDeLaImagen);
+        return img.getImage();
     }
 }

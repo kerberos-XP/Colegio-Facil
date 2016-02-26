@@ -59,7 +59,7 @@ public class MainFrame extends JFrame {
         log.info("Version JRE: " + System.getProperty("java.version") + " de " + System.getProperty("java.vendor"));
        
         // Obtiene los valores del archivo de propiedades
-//        Utils.leerArchivoPropiedades();
+        Utils.leerArchivoPropiedades();
         
         EventQueue.invokeLater(() -> {
             new MainFrame().setVisible(true);

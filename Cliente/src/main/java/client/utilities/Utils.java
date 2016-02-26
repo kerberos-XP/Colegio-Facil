@@ -1,5 +1,6 @@
 package client.utilities;
 
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.Socket;
@@ -13,7 +14,7 @@ import org.apache.log4j.Logger;
  */
 public class Utils {
 
-    static final Logger log = Logger.getLogger(Utils.class);
+    private static final Logger log = Logger.getLogger(Utils.class);
 
     /**
      * Evalua si ya existe otra instancia del programa en ejecución
@@ -43,14 +44,15 @@ public class Utils {
      * Lee el archivo de propiedades y carga su valores en variables globales
      */
     public static void leerArchivoPropiedades() {
-        InputStream input;
         Properties propiedades = new Properties();
+        InputStream in;
         try {
-            input = (Utils.class).getClassLoader().getResourceAsStream("cliente.properties");
-            propiedades.load(input);
+            in = (Utils.class).getClassLoader().getResourceAsStream("configuracion.properties");
+            propiedades.load(in);
         } catch (IOException e) {
-            log.warn("Error al leer cliente.properties", e);
+            log.warn("Error al leer archivo configuracion.properties", e);
         }
+        
         Global.ambiente = propiedades.getProperty("ambiente");
         log.info("Ambiente: " + Global.ambiente);
     }

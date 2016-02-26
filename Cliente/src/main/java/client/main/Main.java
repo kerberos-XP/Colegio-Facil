@@ -2,6 +2,7 @@ package client.main;
 
 import client.forms.VentanaPrincipal;
 import client.utilities.Utils;
+import com.pagosoft.plaf.PlafOptions;
 import java.awt.Dimension;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -35,14 +36,17 @@ public class Main {
         // Obtiene los valores del archivo de propiedades
         Utils.leerArchivoPropiedades();
 
+        // Establecer apariencia
+        PlafOptions.setAsLookAndFeel();
+        PlafOptions.updateAllUIs();
+        
         // Levantar ventana principal
-        JFrame ventanaPrincipal = new JFrame();
+        VentanaPrincipal ventanaPrincipal = new VentanaPrincipal();
 //        ventanaPrincipal.setIconImage(img.getImage());
         ventanaPrincipal.setMinimumSize(new Dimension(800, 600));
         ventanaPrincipal.setResizable(true);
         ventanaPrincipal.setLocationRelativeTo(null);
         ventanaPrincipal.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        ventanaPrincipal.pack();
         ventanaPrincipal.setVisible(true);
     }
     

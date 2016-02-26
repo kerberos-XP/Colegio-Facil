@@ -9,5 +9,4 @@ public class Global {
     
     // Constante inyectada desde el archivo de propiedades
     public static String ambiente;
-    public static boolean autologin;
 }

@@ -1,8 +1,8 @@
 package client.forms;
 
 import client.utilities.Utils;
-import java.awt.BorderLayout;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import org.apache.log4j.Logger;
 
 /**
@@ -24,13 +24,14 @@ public class VentanaPrincipal extends JFrame {
     }
 
     private void acercaDe() {
-
+        JOptionPane.showMessageDialog(null, "Sistema para la Gestión de Colegios. \nSi tiene dudas escríbanos a "
+                + "contacto@SGC.cl", "Acerca de", JOptionPane.INFORMATION_MESSAGE);
     }
 
     private void refrescarPanel() {
         this.paintAll(this.getGraphics());
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -48,7 +49,7 @@ public class VentanaPrincipal extends JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new java.awt.CardLayout());
 
-        panelPrincipal.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        panelPrincipal.setBorder(null);
 
         jLabel1.setText("WELCOME TO THE JUNGLE");
 
@@ -56,22 +57,22 @@ public class VentanaPrincipal extends JFrame {
         panelPrincipal.setLayout(panelPrincipalLayout);
         panelPrincipalLayout.setHorizontalGroup(
             panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelPrincipalLayout.createSequentialGroup()
-                .addContainerGap(293, Short.MAX_VALUE)
+            .addGroup(panelPrincipalLayout.createSequentialGroup()
+                .addGap(79, 79, 79)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(244, 244, 244))
+                .addContainerGap(60, Short.MAX_VALUE))
         );
         panelPrincipalLayout.setVerticalGroup(
             panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelPrincipalLayout.createSequentialGroup()
-                .addGap(162, 162, 162)
+                .addGap(77, 77, 77)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(181, Short.MAX_VALUE))
+                .addContainerGap(166, Short.MAX_VALUE))
         );
 
         getContentPane().add(panelPrincipal, "card2");
 
-        barraMenu.setBorder(null);
+        barraMenu.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
 
         menuArchivo.setText("Archivo");
 

@@ -1,6 +1,14 @@
 package client.forms;
 
+import client.model.Alumno;
+import com.sun.jersey.api.client.Client;
+import com.sun.jersey.api.client.ClientResponse;
+import com.sun.jersey.api.client.WebResource;
+import com.sun.jersey.api.client.config.ClientConfig;
+import com.sun.jersey.api.client.config.DefaultClientConfig;
+import com.sun.jersey.api.json.JSONConfiguration;
 import java.awt.Cursor;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import org.apache.log4j.Logger;
 
@@ -18,34 +26,25 @@ public class PanelPreferencias extends JPanel {
 
     private void consultar() {
         setCursor(new Cursor(Cursor.WAIT_CURSOR));
+
+        ClientConfig clientConfig = new DefaultClientConfig();
+        clientConfig.getFeatures().put(JSONConfiguration.FEATURE_POJO_MAPPING, Boolean.TRUE);
+        Client client = Client.create(clientConfig);
+
+        // GET request para encontrar los datos de Juan Perez
+        String getJuanPerezURL = "http://localhost:8080/Servidor/webapi/myresource";
+        WebResource webResourceGet = client.resource(getJuanPerezURL);
+        ClientResponse response = webResourceGet.get(ClientResponse.class);
+        Alumno alumno = response.getEntity(Alumno.class);
+
+        if (response.getStatus() != 200) {
+            log.info("Error");
+            return;
+        }
         
-//        try {
-//            Client client = Client.create();
-//            WebResource webResource = client.resource(
-//                    "http://api.sbif.cl/api-sbifv3/recursos_api"
-//                    + "/dolar"
-//                    + "?apikey=a99fa8add170d3a4905d663e6bded96d1d11be75"
-//                    + "&formato=json"
-//            );
+        JOptionPane.showMessageDialog(this, "Nombre Alumno: " + alumno.getNombre() + "\n" 
+                + "Edad Alumno: " + alumno.getEdad(), "Información", JOptionPane.INFORMATION_MESSAGE);
 
-//            ClientResponse response = webResource.accept("application/json").get(ClientResponse.class);
-
-//            if (response.getStatus() != 200) {
-//                throw new RuntimeException("Failed : HTTP error code : " + response.getStatus());
-//            }
-
-//            String output = response.getEntity(String.class);
-//            log.info(output);
-
-//            ObjectMapper mapper = new ObjectMapper();
-//            Dolares dolares = mapper.readValue(output,  Dolares.class);
-            
-//            JOptionPane.showMessageDialog(null, "El valor del dolar es " + dolares.getValor(),
-//                    "Información", JOptionPane.INFORMATION_MESSAGE);
-//        } catch (RuntimeException | IOException e) {
-//            e.printStackTrace();
-//        }
-        
         setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
     }
 
@@ -58,7 +57,7 @@ public class PanelPreferencias extends JPanel {
 
         jLabel1.setText("PANEL PREFERENCIAS");
 
-        btnConsulta.setText("Consultar");
+        btnConsulta.setText("Preguntar Datos Juan Perez");
         btnConsulta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnConsultaActionPerformed(evt);

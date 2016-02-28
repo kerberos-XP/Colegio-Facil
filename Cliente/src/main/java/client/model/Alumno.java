@@ -5,9 +5,18 @@ package client.model;
  * @author Omar Paché
  */
 public class Alumno {
-
+    
+    private int id;
     private String nombre;
     private int edad;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getNombre() {
         return nombre;

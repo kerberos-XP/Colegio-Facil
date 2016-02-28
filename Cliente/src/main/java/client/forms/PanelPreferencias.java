@@ -42,8 +42,8 @@ public class PanelPreferencias extends JPanel {
             return;
         }
         
-        JOptionPane.showMessageDialog(this, "Nombre Alumno: " + alumno.getNombre() + "\n" 
-                + "Edad Alumno: " + alumno.getEdad(), "Información", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(this, "ID Alumno: " + alumno.getId() + "\n" + "Nombre: " + alumno.getNombre() + "\n"
+                + "Edad: " + alumno.getEdad(), "Información", JOptionPane.INFORMATION_MESSAGE);
 
         setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
     }

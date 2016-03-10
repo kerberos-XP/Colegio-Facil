@@ -9,11 +9,11 @@ import org.apache.log4j.Logger;
  *
  * @author Omar Paché
  */
-public class VentanaPrincipal extends JFrame {
+public class PanelPrincipal extends JFrame {
 
-    private static final Logger log = Logger.getLogger(VentanaPrincipal.class);
+    private static final Logger log = Logger.getLogger(PanelPrincipal.class);
 
-    public VentanaPrincipal() {
+    public PanelPrincipal() {
         initComponents();
     }
 

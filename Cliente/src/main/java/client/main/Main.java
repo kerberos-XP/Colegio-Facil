@@ -1,7 +1,7 @@
 package client.main;
 
 import client.forms.PanelPreferencias;
-import client.forms.VentanaPrincipal;
+import client.forms.PanelPrincipal;
 import client.utilities.Utils;
 import com.pagosoft.plaf.PlafOptions;
 import java.awt.Dimension;
@@ -15,11 +15,11 @@ import org.apache.log4j.Logger;
  */
 public class Main {
 
-    private static final Logger log = Logger.getLogger(VentanaPrincipal.class);
+    private static final Logger log = Logger.getLogger(PanelPrincipal.class);
 
-    private static VentanaPrincipal ventanaPrincipal;
+    private static PanelPrincipal ventanaPrincipal;
 
-    public static VentanaPrincipal getVentanaPrincipal() {
+    public static PanelPrincipal getVentanaPrincipal() {
         return ventanaPrincipal;
     }
 
@@ -48,7 +48,7 @@ public class Main {
         Utils.leerArchivoPropiedades();
 
         // Levantar ventana principal
-        ventanaPrincipal = new VentanaPrincipal();
+        ventanaPrincipal = new PanelPrincipal();
         ventanaPrincipal.setTitle("SGC");
         ventanaPrincipal.setIconImage(Utils.getIcono());
         ventanaPrincipal.setMinimumSize(new Dimension(800, 600));

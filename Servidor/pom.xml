@@ -3,7 +3,7 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>SGC</groupId>
+    <groupId>colegio-facil</groupId>
     <artifactId>Servidor</artifactId>
     <packaging>war</packaging>
     <version>1.0</version>

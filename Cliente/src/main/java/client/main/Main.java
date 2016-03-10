@@ -49,7 +49,7 @@ public class Main {
 
         // Levantar ventana principal
         ventanaPrincipal = new PanelPrincipal();
-        ventanaPrincipal.setTitle("SGC");
+        ventanaPrincipal.setTitle("Colegio Fácil");
         ventanaPrincipal.setIconImage(Utils.getIcono());
         ventanaPrincipal.setMinimumSize(new Dimension(800, 600));
         ventanaPrincipal.setResizable(true);

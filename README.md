@@ -1,2 +1,2 @@
-# SGC
-Sistema Gestión Colegios
+# Colegio Fácil
+Sistema para la gestión de establecimientos educacionales

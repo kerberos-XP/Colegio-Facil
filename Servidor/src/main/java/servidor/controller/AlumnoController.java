@@ -1,12 +1,12 @@
-package server.controller;
+package servidor.controller;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
-import server.model.Alumno;
-import server.service.AlumnoService;
-import server.service.AlumnoServiceImpl;
+import servidor.vo.AlumnoVO;
+import servidor.service.AlumnoService;
+import servidor.service.AlumnoServiceImpl;
 
 /**
  * Root resource (exposed at "myresource" path)
@@ -21,7 +21,7 @@ public class AlumnoController {
      */
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public Alumno getAlumno() {
+    public AlumnoVO getAlumno() {
         AlumnoService servicioAlumnos = new AlumnoServiceImpl();
         return servicioAlumnos.getJuanPerez();
     }

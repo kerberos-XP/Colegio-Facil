@@ -1,4 +1,4 @@
-package server.utilities;
+package servidor.utilities;
 
 /**
  * Clase contenedora de las constantes

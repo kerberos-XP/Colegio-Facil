@@ -1,6 +1,6 @@
-package server.service;
+package servidor.service;
 
-import server.model.Alumno;
+import servidor.vo.AlumnoVO;
 
 /**
  *
@@ -9,8 +9,8 @@ import server.model.Alumno;
 public class AlumnoServiceImpl implements AlumnoService{
 
     @Override
-    public Alumno getJuanPerez() {
-        Alumno alumno = new Alumno();
+    public AlumnoVO getJuanPerez() {
+        AlumnoVO alumno = new AlumnoVO();
         alumno.setId(1);
         alumno.setEdad(10);
         alumno.setNombre("Juan Perez");

@@ -1,4 +1,4 @@
-package server.dao;
+package servidor.dao;
 
 /**
  *

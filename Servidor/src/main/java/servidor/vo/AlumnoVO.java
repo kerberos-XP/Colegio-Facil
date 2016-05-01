@@ -1,10 +1,10 @@
-package server.model;
+package servidor.vo;
 
 /**
  *
  * @author Omar Paché
  */
-public class Alumno {
+public class AlumnoVO {
     
     private int id;
     private String nombre;

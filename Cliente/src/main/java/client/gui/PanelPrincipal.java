@@ -1,4 +1,4 @@
-package client.forms;
+package client.gui;
 
 import client.utilities.Utils;
 import javax.swing.JFrame;
@@ -40,10 +40,11 @@ public class PanelPrincipal extends JFrame {
         jLabel1 = new javax.swing.JLabel();
         barraMenu = new javax.swing.JMenuBar();
         menuSistema = new javax.swing.JMenu();
-        itemAlumnos = new javax.swing.JMenuItem();
         separdor = new javax.swing.JPopupMenu.Separator();
         itemPreferencias = new javax.swing.JMenuItem();
         itemSalir = new javax.swing.JMenuItem();
+        menuAlumnos = new javax.swing.JMenu();
+        itemMantenedorAlumnos = new javax.swing.JMenuItem();
         menuPases = new javax.swing.JMenu();
         itemAtrasos = new javax.swing.JMenuItem();
         menuBiblioteca = new javax.swing.JMenu();
@@ -80,14 +81,6 @@ public class PanelPrincipal extends JFrame {
         barraMenu.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
 
         menuSistema.setText("Sistema");
-
-        itemAlumnos.setText("Alumnos");
-        itemAlumnos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                itemAlumnosActionPerformed(evt);
-            }
-        });
-        menuSistema.add(itemAlumnos);
         menuSistema.add(separdor);
 
         itemPreferencias.setText("Preferencias");
@@ -107,6 +100,18 @@ public class PanelPrincipal extends JFrame {
         menuSistema.add(itemSalir);
 
         barraMenu.add(menuSistema);
+
+        menuAlumnos.setText("Alumnos");
+
+        itemMantenedorAlumnos.setText("Mantenedor");
+        itemMantenedorAlumnos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemMantenedorAlumnosActionPerformed(evt);
+            }
+        });
+        menuAlumnos.add(itemMantenedorAlumnos);
+
+        barraMenu.add(menuAlumnos);
 
         menuPases.setText("Pases");
 
@@ -169,19 +174,20 @@ public class PanelPrincipal extends JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_itemPrestamosActionPerformed
 
-    private void itemAlumnosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemAlumnosActionPerformed
+    private void itemMantenedorAlumnosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemMantenedorAlumnosActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_itemAlumnosActionPerformed
+    }//GEN-LAST:event_itemMantenedorAlumnosActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuBar barraMenu;
     private javax.swing.JMenuItem itemAcercaDe;
-    private javax.swing.JMenuItem itemAlumnos;
     private javax.swing.JMenuItem itemAtrasos;
+    private javax.swing.JMenuItem itemMantenedorAlumnos;
     private javax.swing.JMenuItem itemPreferencias;
     private javax.swing.JMenuItem itemPrestamos;
     private javax.swing.JMenuItem itemSalir;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JMenu menuAlumnos;
     private javax.swing.JMenu menuAyuda;
     private javax.swing.JMenu menuBiblioteca;
     private javax.swing.JMenu menuPases;

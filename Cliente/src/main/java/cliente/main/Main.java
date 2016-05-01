@@ -1,7 +1,6 @@
-package client.main;
+package cliente.main;
 
-import client.forms.PanelPreferencias;
-import client.forms.PanelPrincipal;
+import client.gui.PanelPrincipal;
 import client.utilities.Utils;
 import com.pagosoft.plaf.PlafOptions;
 import java.awt.Dimension;
@@ -15,7 +14,7 @@ import org.apache.log4j.Logger;
  */
 public class Main {
 
-    private static final Logger log = Logger.getLogger(PanelPrincipal.class);
+    private static final Logger log = Logger.getLogger(Main.class);
 
     private static PanelPrincipal ventanaPrincipal;
 

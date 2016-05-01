@@ -1,6 +1,6 @@
-package client.forms;
+package client.gui;
 
-import client.model.Alumno;
+import cliente.vo.AlumnoVO;
 import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.ClientResponse;
 import com.sun.jersey.api.client.WebResource;
@@ -35,7 +35,7 @@ public class PanelPreferencias extends JPanel {
         String getJuanPerezURL = "http://localhost:8080/Servidor/webapi/myresource";
         WebResource webResourceGet = client.resource(getJuanPerezURL);
         ClientResponse response = webResourceGet.get(ClientResponse.class);
-        Alumno alumno = response.getEntity(Alumno.class);
+        AlumnoVO alumno = response.getEntity(AlumnoVO.class);
 
         if (response.getStatus() != 200) {
             log.info("Error");

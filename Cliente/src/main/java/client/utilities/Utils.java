@@ -1,6 +1,6 @@
 package client.utilities;
 
-import client.main.Main;
+import cliente.main.Main;
 import java.awt.Image;
 import java.io.IOException;
 import java.io.InputStream;
